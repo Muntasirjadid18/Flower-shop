@@ -1,5 +1,9 @@
-body{
+*{
+  margin: 0;
+}
+header{
     background-color: rgba(241, 200, 207, 0.924);
+  
 }
 .flex-section{
     display: flex;
@@ -37,3 +41,30 @@ width: 800px;
       padding: 15px 50px;
       padding-right: 80px;
   }
+  .items{
+    padding-top: 80px;
+    justify-items: center;
+  }
+  .img{
+    padding-top: 50px;
+    gap: 50px;
+    display: flex;
+  }
+  .pink{
+    background: rgba(167, 33, 98, 0.19);
+    height: 30%;
+    border-top-left-radius: 50% ;
+    border-top-right-radius: 50% ;
+  }
+  .red{
+    background: rgba(5, 151, 160, 0.15);
+    height: 30%;
+    border-top-left-radius: 50% ;
+    border-top-right-radius: 50% ;
+  }
+  .yellow{
+    background: rgba(71, 125, 17, 0.15);
+    border-top-left-radius: 50% ;
+    border-top-right-radius: 50% ;
+  }
+
