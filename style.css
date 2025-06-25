@@ -181,8 +181,7 @@
   margin-bottom: 32px;
 }
 
-.ht-deal-img {
-}
+
 .ht-deal-img img {
   display: block;
   position: relative left;
@@ -211,10 +210,18 @@
 }
 
 .card-container {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr; 
+  gap: 80px;
 }
+
+@media (min-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(4, 1fr); 
+  }
+}
+
+
 
 .card-single {
   width: 18vw;
@@ -225,6 +232,7 @@
   position: relative;
   height: 100%;
   width: 100%;
+    display: block;
 }
 /* latest starts */
 .latest-area {
@@ -433,8 +441,6 @@
     margin: 50px 20px;
   }
   .ht-deal-text {
-    /* max-width: 50%; */
-    /* margin: auto auto; */
     align-content: center;
     margin-right: 0px;
   }
@@ -446,8 +452,6 @@
     margin-bottom: 20px;
   }
 
-  .ht-deal-img {
-  }
   .ht-deal-img img {
     display: block;
     margin-top: 50px;
@@ -501,11 +505,11 @@
   }
   .latest {
     align-items: unset;
-    /* padding: 120px 0px; */
+   
 
     background-image: url(./images/Rectangle\ 9.png);
     background-repeat: no-repeat;
-    /* background-position: center; */
+ 
     background-size:cover;
     border-radius: 8px;
     padding: 50px 0px;
