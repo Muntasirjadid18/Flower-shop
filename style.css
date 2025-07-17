@@ -4,7 +4,10 @@
   border: 0;
   font-family: "Lato", serif;
   font-style: normal;
-  box-sizing: content-box;
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
 }
 
 :root {
@@ -13,47 +16,44 @@
 }
 
 /* Hero styles */
-.hero-area {
+header {
   background: rgba(229, 84, 115, 0.1);
   overflow: auto;
 }
 
 .hero {
   display: flex;
+  gap: 80px;
   align-items: center;
-
-  margin: 0px 240px;
-  margin-top: 50px;
+  text-align: center;
+  margin: 50px 240px 0;
 }
 .hero-text {
-  max-width: 50%;
+  margin: 0 0 50px;
 }
 
 .hero-title {
   color: var(--black);
-  font-size: 80px;
-  font-style: normal;
+  font-size: 70px;
   font-weight: 800;
 }
 
 .hero-para {
   color: var(--black);
   font-size: 18px;
-  font-style: normal;
   font-weight: 400;
-
-  margin: 32px 0px;
+  padding: 12px;
 }
 
 .btn-prime {
   padding: 20px 43px;
   border-radius: 8px;
-  border: none;
   background-color: var(--pink);
-
+  margin: 12px;
   color: white;
   font-size: 20px;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .btn-prime:hover {
@@ -61,25 +61,29 @@
 }
 
 .hero-banner {
-  margin-left: 97px;
+  margin: auto;
 }
 .img-banner {
+  display: block;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
 }
-/* Hero Ends */
 
 /* Main starts */
 .main {
-  margin: 178px 0px 128px 0px;
+  margin: 178px 0 128px;
 }
 
-/* Feat starts  */
+/* Feat starts */
 .feat-flower-area {
   margin-bottom: 128px;
 }
+
 .feat {
-  margin: 0px 240px;
-  margin-bottom: 128px;
+  margin: 0 240px 128px;
 }
+
 .feat-title {
   color: var(--black);
   text-align: center;
@@ -93,7 +97,6 @@
   text-align: center;
   font-size: 18px;
   font-weight: 400;
-  /* padding: 0px 180px; */
   margin-bottom: 48px;
 }
 
@@ -106,20 +109,15 @@
 .flower-bg {
   width: 21vw;
   height: 24.36vw;
-  border-radius: 300px 300px 0px 0px;
-  /* background-image: url(./images/pngwing\ 6.png); */
-  /* background-repeat: no-repeat; */
-  /* background-position: bottom; */
-  margin-bottom: 24px;
+  border-radius: 300px 300px 0 0;
   display: flex;
   justify-content: center;
+  margin-bottom: 24px;
 }
+
 .flower-img {
-  position: relative bottom;
   width: 100%;
   height: 100%;
-
-  /* display: block; */
 }
 
 .flower-a a {
@@ -127,19 +125,18 @@
   text-align: center;
   font-size: 24px;
   font-weight: 700;
-  text-decoration: none;
-  text-decoration-line: underline;
-  text-decoration-style: solid;
+  text-decoration: underline;
   display: block;
 }
-/* delivery starts */
-.delivery {
-  margin: 0px 240px;
-}
-.del-box {
-  max-width: 100%;
-  height: 320px;
 
+/* Delivery starts */
+.delivery {
+  margin: 0 240px;
+}
+
+.del-box {
+  width: 100%;
+  height: 320px;
   border-radius: 8px;
   background: rgba(39, 39, 39, 0.05);
   display: flex;
@@ -148,23 +145,24 @@
   text-align: center;
 }
 
-/* hot deal starts */
+/* Hot deal starts */
 .ht-deal-area {
   border-radius: 8px;
   background: rgba(229, 84, 115, 0.05);
   margin-bottom: 128px;
   overflow: auto;
 }
+
 .ht-deal {
   display: flex;
   margin: 100px 240px;
 }
+
 .ht-deal-text {
-  /* max-width: 50%; */
-  /* margin: auto auto; */
   align-content: center;
   margin-right: 215px;
 }
+
 .ht-deal-title {
   color: var(--black);
   font-size: 40px;
@@ -181,16 +179,16 @@
   margin-bottom: 32px;
 }
 
-
 .ht-deal-img img {
   display: block;
-  position: relative left;
 }
 
-/* Insta starts */
+/* Instagram starts */
 .insta {
-  margin: 0px 240px;
-  margin-bottom: 128px;
+  padding: 60px;
+  padding-bottom: 60px;
+   display: block;
+  margin: 0 auto;
 }
 
 .insta-title {
@@ -211,55 +209,75 @@
 
 .card-container {
   display: grid;
-  grid-template-columns: 1fr; 
-  gap: 80px;
+  grid-template-columns: repeat(250px, 1fr);
+  gap: 20px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.card-single {
+  width: 100%;
+  max-width: 300px;
+}
+
+.card-single img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
 }
 
 @media (min-width: 768px) {
   .card-container {
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(4, 1fr);
+     justify-items: center; 
   }
 }
+@media (max-width: 576px) {
+  .card-container {
+    grid-template-columns: 1fr; 
+    padding: 10px;
+  }
 
-
-
+  .card-single {
+    margin: 0 auto; 
+}
 .card-single {
   width: 18vw;
   height: 20vw;
+  display: block;
+  margin: 0 auto;
 }
 
 .card-single img {
-  position: relative;
-  height: 100%;
   width: 100%;
-    display: block;
-}
-/* latest starts */
+  height: 100%;
+  display: block;
+}}
+/* Latest starts */
 .latest-area {
-  margin: 0px 240px; /*exception case */
+  margin: 0 240px;
 }
+
 .latest {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* padding: 120px 0px; */
-
   background-image: url(./images/Rectangle\ 9.png);
   background-repeat: no-repeat;
-  /* background-position: center; */
   background-size: contain;
   border-radius: 8px;
-
-  width: 100%;
-  height: 25vw;
+  margin-top: 50px;
+  width: 70vw;
+  height: 50vh;
+  margin: 0 auto;
 }
 
 .latest-title {
   color: #272727;
   text-align: center;
   font-size: 40px;
-  font-style: normal;
   font-weight: 800;
   margin-bottom: 16px;
 }
@@ -272,19 +290,19 @@
   margin-bottom: 48px;
 }
 
-.input-div {
-}
 .latest input {
   padding: 23px;
   border-radius: 8px;
   width: 35vw;
 }
-/* footer starts */
+
+/* Footer starts */
 .footer-area {
   background: #111010;
 }
+
 .footer {
-  padding: 128px 0px;
+  padding: 128px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -311,209 +329,125 @@
   text-align: center;
   font-size: 16px;
   font-weight: 400;
-  /* margin-bottom: 128px; */
 }
 
 /* Responsive Design */
 @media screen and (max-width: 576px) {
-  /* Hero styles */
-  .hero-area {
-    /* background: rgba(229, 84, 115, 0.1); */
-    overflow: hidden;
-  }
-
   .hero {
-    display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    padding: 0px 40px;
-    margin: 0px;
-    margin-top: 50px;
-  }
-  .hero-text {
-    max-width: 576px;
-    align-items: center;
-
-    /* padding-left: 35px; */
+    padding: 0 40px;
+    margin: 50px 0 0;
   }
 
   .hero-title {
-    color: var(--black);
     font-size: 40px;
-    font-style: normal;
-    font-weight: 800;
-
     text-align: center;
   }
 
   .hero-para {
     font-size: 16px;
     text-align: center;
-    margin: 32px 0px;
+    margin: 32px 0;
   }
 
   .btn-prime {
     display: block;
-    padding: 20px 43px;
-    border-radius: 8px;
     font-size: 16px;
-
     margin: 0 auto;
-  }
-
-  .btn-prime:hover {
-    background-color: #e55473af;
   }
 
   .hero-banner {
-    margin: 0 auto;
-    margin-top: 50px;
-    /* width: 100%; */
+    margin: 50px auto 0;
   }
+
   .hero-banner img {
     width: 100vw;
     height: auto;
   }
-  /* Hero Ends */
 
-  /* Main starts */
   .main {
-    margin: 50px 0px;
+    margin: 50px 0;
   }
 
-  /* Feat starts  */
   .feat-flower-area {
-    margin: 50px 0px;
+    margin: 50px 0;
   }
+
   .feat {
-    margin: 0px 20px;
-    margin-bottom: 50px;
+    margin: 0 20px 50px;
   }
 
   .flower-container {
-    display: flex;
     flex-direction: column;
     gap: 20px;
     justify-content: center;
   }
+
   .flower-container > div {
     margin: 0 auto;
   }
+
   .flower-bg {
     width: 80vw;
     height: 91.2vw;
     margin-bottom: 12px;
   }
-  .flower-img {
-    position: relative bottom;
-    width: 100%;
-    height: 100%;
-    /* z-index: -10; */
-    /* display: block; */
-  }
 
   .flower-a a {
-    color: var(--black);
-    text-align: center;
     font-size: 18px;
   }
-  /* delivery starts */
+
   .delivery {
-    margin: 0px 20px;
-  }
-  .del-box {
-    max-width: 100%;
-    padding: 25px;
-    height: fit-content;
-    flex-direction: column;
-    gap: 70px;
+    margin: 0 20px;
   }
 
-  /* hot deal starts */
-  .ht-deal-area {
-    border-radius: 8px;
-    background: rgba(229, 84, 115, 0.05);
-    margin-bottom: 50px;
-    overflow: auto;
+  .del-box {
+    padding: 25px;
+    flex-direction: column;
+    gap: 70px;
+    height: fit-content;
   }
+
+  .ht-deal-area {
+    margin-bottom: 50px;
+  }
+
   .ht-deal {
     flex-direction: column;
     margin: 50px 20px;
   }
-  .ht-deal-text {
-    align-content: center;
-    margin-right: 0px;
-  }
-  .ht-deal-title {
-    margin-bottom: 20px;
-  }
 
-  .ht-deal-para {
-    margin-bottom: 20px;
+  .ht-deal-text {
+    margin-right: 0;
   }
 
   .ht-deal-img img {
-    display: block;
     margin-top: 50px;
-    position: relative left;
   }
 
-  /* Insta starts */
   .insta {
-    margin: 0px 20px;
-    margin-bottom: 50px;
-  }
-
-  .insta-title {
-    color: #272727;
-    text-align: center;
-    font-size: 40px;
-    font-weight: 800;
-    margin-bottom: 24px;
-  }
-
-  .insta-para {
-    color: rgba(39, 39, 39, 0.6);
-    text-align: center;
-    font-size: 18px;
-    font-weight: 400;
-    margin-bottom: 48px;
+    margin: 0 20px 50px;
   }
 
   .card-container {
+    display: flex;
     flex-direction: column;
     gap: 20px;
-    justify-content: center;
-    /* flex-wrap: wrap; */
   }
 
   .card-single {
     margin: 0 auto;
     width: 80vw;
-    height: 88.88vw;
-  }
-
-  .card-single img {
-    /* position: relative; */
-    width: 100%;
     height: auto;
   }
 
-  /* latest starts */
   .latest-area {
-    margin: 0px 20px; /*exception case */
+    margin: 0 20px;
   }
-  .latest {
-    align-items: unset;
-   
 
-    background-image: url(./images/Rectangle\ 9.png);
-    background-repeat: no-repeat;
- 
-    background-size:cover;
-    border-radius: 8px;
-    padding: 50px 0px;
-    width: 100%;
+  .latest {
+    background-size: cover;
+    padding: 50px 0;
     height: auto;
   }
 
@@ -525,20 +459,13 @@
     font-size: 16px;
   }
 
-  .input-div {
-    margin: 0 auto;
-    min-width: 100px;
-  }
   .latest input {
     padding: 23px;
     border-radius: 8px;
     min-width: 200px;
     margin-bottom: 20px;
   }
-  /* footer starts */
-  .footer-area {
-    background: #111010;
-  }
+
   .footer {
     padding: 50px 20px;
   }
